@@ -2,43 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>POA Personality Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>POA Discovery & Personality Quiz 🐾</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts for a friendly, rounded typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="quiz-container">
-    <div id="progress-container" class="progress-container">
-      <div id="progress-bar" class="progress-bar"></div>
-    </div>
 
-    <div id="quiz-screen">
-      <div class="image-wrapper">
-        <div id="quiz-illustration" class="illustration-box">📊</div>
-      </div>
-      <p id="question-text" class="question-text"></p>
-      <div id="options-container" class="options-container"></div>
-      <p id="feedback-text" class="feedback-text hidden"></p>
-    </div>
-
-    <div id="result-screen" class="result-screen hidden">
-      <div class="result-badge" id="result-emoji">🐰</div>
-      <h2 id="result-title"></h2>
-      <p id="result-quote" class="result-quote"></p>
-      <p id="result-desc" class="result-desc"></p>
-
-      <div class="style-card">
-        <span class="style-tag" id="combo-tag"></span>
-        <h3 id="combo-title"></h3>
-        <p id="combo-desc"></p>
-      </div>
-
-      <button id="restart-btn" class="option-btn">Retake Quiz 🔄</button>
-    </div>
+  <!-- Floating background decorations -->
+  <div class="bg-decorations" aria-hidden="true">
+    <span class="bubble">🐾</span>
+    <span class="bubble">✨</span>
+    <span class="bubble">🍃</span>
+    <span class="bubble">🐾</span>
+    <span class="bubble">⭐</span>
   </div>
+
+  <main class="quiz-container">
+    <!-- START / WELCOME CARD -->
+    <div id="start-card" class="card active">
+      <div class="badge">POA Adventure 🐾</div>
+      <h1>Principles of Accounts Quiz</h1>
+      <p>Test your financial savvy and discover your unique study & accounting personality animal!</p>
+      <div class="intro-animals">🦉 🐆 🐬 🦫</div>
+      <button id="start-btn" class="btn">Let's Begin! 🚀</button>
+    </div>
+
+    <!-- QUIZ CARD -->
+    <div id="quiz-card" class="card hidden">
+      <!-- Progress & Header -->
+      <div class="quiz-header">
+        <span id="part-tag" class="part-tag">PART 1: POA Discovery</span>
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="quiz-meta">
+          <span id="question-count">Question 1 of 20</span>
+          <span id="score-tracker" class="score-tracker">Score: 0</span>
+        </div>
+      </div>
+
+      <!-- Question & Options -->
+      <div class="question-section">
+        <h2 id="question-text">Question text goes here...</h2>
+        <div id="options-container" class="options-grid"></div>
+      </div>
+
+      <!-- Feedback Area for Part 1 -->
+      <div id="feedback-box" class="feedback-box hidden">
+        <div id="feedback-message" class="feedback-message"></div>
+        <button id="next-btn" class="btn">Next Question ➔</button>
+      </div>
+    </div>
+
+    <!-- RESULT CARD -->
+    <div id="result-card" class="card hidden">
+      <div class="badge">Quiz Complete! 🎉</div>
+      <h2>Your Quiz Results</h2>
+      
+      <!-- Part 1 Score Summary -->
+      <div class="score-summary">
+        <p>You scored <strong id="final-score">0</strong> out of 13 in POA Discovery!</p>
+      </div>
+
+      <!-- Part 2 Character Depiction -->
+      <div id="character-box" class="character-box">
+        <div id="character-emoji" class="character-emoji">🦉</div>
+        <h3 id="character-title">The Strategic Owl</h3>
+        <p id="character-desc">You are organized, analytical, and love having a solid plan before diving in.</p>
+      </div>
+
+      <button id="restart-btn" class="btn btn-secondary">Try Again 🔄</button>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
